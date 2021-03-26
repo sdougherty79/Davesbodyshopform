@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Dave's Body Shop Form Redesign</title>
+</head>
+<body>
+    <section class="container">
+        <article>
+            <h1>Get An Estimate</h1>
+            <p>If the car is drivable we welcome you to bring it to Dave's Body Shop. If not, we can always arrange for it to be towed. Please indicate your information below.</p>
+        </article>
+        <form action="results.html" method="POST" enctype="multipart/form-data">
+            <div data-error-message-message="First Name is required">
+                <label for="firstName">First Name:<span>*</span></label>
+                <input type="text" name="firstName" id="firstName" minlength="2" required/>
+            </div>
+            <div data-error-message="Last Name is required">
+                <label for="lastName">Last Name:<span>*</span></label>
+                <input type="text" name="lastName" id="lastName" minlength="2"  required/>
+            </div>
+            <div class="carInfo">
+                <div class="split" data-error-message="Year is required">
+                    <label for="year">Year:<span>*</span></label>
+                    <input type="number" name="year" id="year" min="1900" max="2022" required/>
+                </div>
+                <div class="split" data-error-message="Make is required">
+                    <label for="make">Make:<span>*</span></label>
+                    <input type="text" name="make" id="make" minlength="4" required/>
+                </div>
+                <div class="split" data-error-message="Model is required">
+                    <label for="model">Model:<span>*</span></label>
+                    <input type="text" name="model" id="model" required/>
+                </div>
+            </div>
+            <div data-error-message="Insurance Provider is required">
+                <label for="insuranceProvider">Insurance Provider:</label>
+                <input type="text" name="insuranceProvider" id="insuranceProvider" minlength="4" required/>
+            </div>
+            <div data-error-message="Email is required">
+                <label for="email">Email:<span>*</span></label>
+                <input type="email" name="email" id="email" required/>
+            </div>
+            <div>
+                <label for="city">City:</label>
+                <input type="text" name="city" id="city"/>
+            </div>
+            <div data-error-message="Phone Number is required">
+                <label for="phone">Phone Number:<span>*</span></label>
+                <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/>
+            </div>
+            <div>
+                <label for="message">Description of Damage:</label>
+                <textarea name="message" id="message" rows="10"></textarea>
+            </div>
+            <button type="submit" name="submit" value="submit" id="submit" >Submit Estimate Request</button> 
+        </form>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/jquery-input-mask-phone-number@1.0.15/dist/jquery-input-mask-phone-number.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
